@@ -1,4 +1,4 @@
-date,ticker,no_of_shares,share_price
+order_date,symbol,no_of_shares,share_price
 16-mar-20,AMZN,59,84.46
 16-mar-20,AAPL,83,60.50
 16-mar-20,MSFT,37,135.42
