@@ -12,6 +12,7 @@ import numpy as np
 from pathlib import Path
 from dotenv import load_dotenv
 import alpaca_trade_api as tradeapi
+import streamlit as st
 #from MCForecastTools import MCSimulation
 import warnings
 warnings.filterwarnings("ignore")
@@ -48,7 +49,7 @@ portfolio_df['order_total'] = portfolio_df['no_of_shares']*portfolio_df['share_p
 #join_data_columns.drop(join_data_columns.filter(regex="0"),axis=1, inplace=True)
 #join_data_columns.head()
 
-print(portfolio_df)
+st.write(portfolio_df)
 
 
 # In[36]:
@@ -113,30 +114,30 @@ current_price_df['PNL'] = current_price_df['current_value'] - current_price_df['
 
 #for i in gains:
  #   if gains > 365:
-  #      print('true')
+  #      st('true')
    # elif 
-    #    print('false')
+    #    st('false')
 
-#print(current_price_df['bought_days_from_today'])
+#st(current_price_df['bought_days_from_today'])
 #if current_price_df['bought_days_from_today']>365:
-#    print ('True')
+#    st ('True')
 #else:
- #    print ('not true')
+ #    st ('not true')
 
     # > 365:
-    #print('its true')
+    #st('its true')
 
-#print(current_price_df['order_date'])
+#st(current_price_df['order_date'])
 
 
-#print(current_price_df['order_date'])
+#st(current_price_df['order_date'])
 
 #date_check = date.today() - current_price_df['order_date'] 
 
-#print(date_check)
+#st(date_check)
 
 
-#print(date.today())
+#st(date.today())
 #if current_price_df['date'] > 
 
 #add total value column to dataframe profit/loss column
@@ -170,36 +171,36 @@ LT_negative_pnl = LT_portfolio_df[LT_portfolio_df['PNL'] < 0].sum()
 LT_positive_pnl = LT_portfolio_df[LT_portfolio_df['PNL'] > 0].sum()
 LT_negative_pnl =LT_negative_pnl['PNL']
 LT_positive_pnl =LT_positive_pnl['PNL']
-print(LT_portfolio_df)
+st.write(LT_portfolio_df)
 
 
-print(f"the value of your long term gains taxable portfolio is  $ {LT_portfolio_balance}")
-print(f"your initial investment is  $ {LT_portfolio_inital_investment}")
-print(f"the taxable difference is  $ {LT_portfolio_balance} - {LT_portfolio_inital_investment} = {LT_taxable_amount} ")
-print(f"the positive pnl sum is $ {LT_positive_pnl}")
+st.write(f"the value of your long term gains taxable portfolio is  $ {LT_portfolio_balance}")
+st.write(f"your initial investment is  $ {LT_portfolio_inital_investment}")
+st.write(f"the taxable difference is  $ {LT_portfolio_balance} - {LT_portfolio_inital_investment} = {LT_taxable_amount} ")
+st.write(f"the positive pnl sum is $ {LT_positive_pnl}")
 
 ST_portfolio_df = current_price_df.loc[current_price_df['tax'] == 'ST']
 ST_portfolio_balance = ST_portfolio_df['current_value'].sum()
 ST_portfolio_inital_investment = ST_portfolio_df['order_total'].sum()
 ST_taxable_amount = ST_portfolio_balance - ST_portfolio_inital_investment
 total_portfolio_value = LT_portfolio_balance + ST_portfolio_balance
-print(ST_portfolio_df)
+st.write(ST_portfolio_df)
 
 
 
 
-print(f"the value of your short term gains taxable portfolio is  $ {ST_portfolio_balance}")
-print(f"your initial investment is  $ {ST_portfolio_inital_investment}")
-print(f"the taxable difference is  $ {ST_portfolio_balance} - {ST_portfolio_inital_investment} = {ST_taxable_amount} ")
-print(f"total portfolio value is $ {total_portfolio_value}")
+st.write(f"the value of your short term gains taxable portfolio is  $ {ST_portfolio_balance}")
+st.write(f"your initial investment is  $ {ST_portfolio_inital_investment}")
+st.write(f"the taxable difference is  $ {ST_portfolio_balance} - {ST_portfolio_inital_investment} = {ST_taxable_amount} ")
+st.write(f"total portfolio value is $ {total_portfolio_value}")
 
 
 # In[71]:
 
 
 
-print(LT_positive_pnl)
-print(LT_negative_pnl)
+st.write(LT_positive_pnl)
+st.write(LT_negative_pnl)
 
 
 # In[41]:
