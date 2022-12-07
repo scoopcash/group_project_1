@@ -5,9 +5,6 @@
 ## Collaborators
 Andres and Jerami
 
-
-
-
 # project title
 Tax Harvest Advisor
 
@@ -21,11 +18,11 @@ provide portfolio analysis.
 
 # reseach questions to answer
 n/a
-
+![Alt text](newplot.png)
 # datasets to be used
 stock ticker data
 user provided data
-
+![Alt text](newplot2.png)
 # rough break down of tasks
 1. genrate portofolio by allowing user to input purchase date, ticket, shares, price into app
 2. display portfolio balance by symbol up to date info provided by api
