@@ -39,4 +39,4 @@ user provided data
     f. sharpe
     g. profit/loss
     h. standard deviation
-7. 
+7. ![Alt text](output.png)
